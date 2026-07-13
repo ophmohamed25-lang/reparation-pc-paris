@@ -1,286 +1,581 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ordiphone Service 9 | Réparation PC & Téléphone Paris 9</title>
+<title>Ordiphone Service 9 | Réparation PC & Téléphones Paris 9</title>
 
-<meta name="description" content="Ordiphone Service 9 : réparation PC, smartphones, imprimantes et dépannage informatique à Paris 9. Vente informatique, accessoires et matériel reconditionné.">
+<meta name="description"
+content="Réparation informatique, smartphones, imprimantes, vente de matériel reconditionné à Paris 9.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Arial', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#080d1a;
-    color:white;
+background:#08101f;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
 }
 
 .container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+width:90%;
+max-width:1250px;
+margin:auto;
 }
-
-
-/* HEADER */
 
 header{
-    padding:25px 0;
-    position:absolute;
-    width:100%;
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 0;
+background:rgba(8,16,31,.90);
+backdrop-filter:blur(12px);
+z-index:999;
+transition:.4s;
+
 }
 
-.logo img{
-    width:150px;
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
 }
 
+.logo{
 
-/* HERO */
+font-size:30px;
+font-weight:800;
+color:#FFD700;
+
+}
+
+.logo span{
+
+color:#fff;
+
+}
+
+nav ul{
+
+display:flex;
+gap:35px;
+list-style:none;
+
+}
+
+nav ul a{
+
+color:white;
+font-weight:500;
+transition:.3s;
+
+}
+
+nav ul a:hover{
+
+color:#FFD700;
+
+}
+
+.cta{
+
+background:#FFD700;
+color:#000;
+padding:12px 22px;
+border-radius:10px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+.cta:hover{
+
+transform:translateY(-3px);
+
+}
 
 .hero{
 
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:
-    linear-gradient(rgba(5,10,25,.85),rgba(5,10,25,.95)),
-    radial-gradient(circle at top right,#ffd70033,transparent 40%);
+min-height:100vh;
+
+display:flex;
+align-items:center;
+
+background:
+
+linear-gradient(rgba(5,12,30,.86),rgba(5,12,30,.94)),
+
+url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80");
+
+background-size:cover;
+background-position:center;
 
 }
 
+.hero-grid{
 
-.hero-content{
-    max-width:700px;
+display:grid;
+grid-template-columns:1fr 500px;
+gap:70px;
+align-items:center;
+
 }
-
 
 .hero h1{
 
-    font-size:55px;
-    line-height:1.1;
-    margin-bottom:25px;
+font-size:65px;
+line-height:1.05;
+margin-bottom:20px;
 
 }
 
+.hero span{
 
-.hero h1 span{
-    color:#ffd700;
+color:#FFD700;
+
 }
-
 
 .hero p{
 
-    font-size:22px;
-    color:#ddd;
-    margin-bottom:35px;
+font-size:22px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:35px;
 
 }
 
+.buttons{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
 
 .btn{
 
-    display:inline-block;
-    padding:16px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    margin-right:10px;
-    transition:.3s;
+padding:16px 32px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
 
 }
 
+.yellow{
 
-.call{
-
-    background:#ffd700;
-    color:#000;
-
-}
-
-
-.whatsapp{
-
-    background:#25D366;
-    color:white;
+background:#FFD700;
+color:black;
 
 }
 
+.green{
+
+background:#25D366;
+color:white;
+
+}
 
 .btn:hover{
 
-    transform:translateY(-3px);
+transform:translateY(-5px);
 
 }
 
+.hero-card{
 
+background:rgba(255,255,255,.05);
 
-/* SECTIONS */
+backdrop-filter:blur(18px);
+
+padding:35px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.1);
+
+}
+
+.hero-card h3{
+
+margin-bottom:25px;
+font-size:30px;
+color:#FFD700;
+
+}
+
+.hero-card p{
+
+margin:12px 0;
+font-size:18px;
+
+}
+
+.stats{
+
+margin-top:80px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.stat{
+
+background:#111827;
+padding:30px;
+border-radius:16px;
+text-align:center;
+transition:.4s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-8px);
+
+}
+
+.stat h2{
+
+font-size:42px;
+color:#FFD700;
+
+}
 
 section{
 
-    padding:80px 0;
+padding:100px 0;
 
 }
-
 
 .title{
 
-    text-align:center;
-    font-size:36px;
-    margin-bottom:50px;
+text-align:center;
+font-size:42px;
+margin-bottom:60px;
 
 }
-
 
 .title span{
 
-    color:#ffd700;
+color:#FFD700;
 
 }
-
-
-
-/* SERVICES */
 
 .cards{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
 
 }
-
 
 .card{
 
-    background:#111827;
-    padding:30px;
-    border-radius:15px;
-    border:1px solid #ffffff15;
-    transition:.3s;
+background:#111827;
+
+padding:35px;
+
+border-radius:20px;
+
+transition:.4s;
+
+border:1px solid rgba(255,255,255,.08);
 
 }
-
 
 .card:hover{
 
-    transform:translateY(-5px);
-    border-color:#ffd700;
+transform:translateY(-10px);
+
+border-color:#FFD700;
 
 }
 
+.card i{
+
+font-size:45px;
+
+color:#FFD700;
+
+margin-bottom:20px;
+
+}
 
 .card h3{
 
-    color:#ffd700;
-    margin-bottom:15px;
+margin-bottom:15px;
+
+font-size:24px;
 
 }
-
 
 .card p{
 
-    color:#ccc;
+color:#ccc;
+
+line-height:1.8;
+
+}```css
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 
 }
 
+.gallery img{
 
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:18px;
+transition:.4s;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
 
-/* POURQUOI */
+}
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
 
 .features{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 
 }
-
 
 .feature{
 
-    background:#111827;
-    padding:25px;
-    border-radius:12px;
-    text-align:center;
+background:#111827;
+padding:35px;
+border-radius:18px;
+text-align:center;
+transition:.4s;
 
 }
 
+.feature:hover{
 
+transform:translateY(-10px);
 
-/* MARQUES */
+}
+
+.feature i{
+
+font-size:48px;
+color:#FFD700;
+margin-bottom:20px;
+
+}
+
+.feature h3{
+
+margin-bottom:15px;
+
+}
+
+.feature p{
+
+color:#ccc;
+line-height:1.7;
+
+}
 
 .brands{
 
-    text-align:center;
-    font-size:22px;
-    color:#ddd;
-    line-height:2;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:20px;
 
 }
 
+.brand{
 
+background:#111827;
+padding:25px;
+border-radius:15px;
+font-size:22px;
+font-weight:700;
+text-align:center;
 
-/* CONTACT */
+}
+
+.testimonials{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+
+}
+
+.testimonial{
+
+background:#111827;
+padding:30px;
+border-radius:18px;
+border-left:5px solid #FFD700;
+
+}
+
+.testimonial p{
+
+line-height:1.8;
+color:#ddd;
+
+}
+
+.testimonial h4{
+
+margin-top:20px;
+color:#FFD700;
+
+}
+
+.map{
+
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
 
 .contact{
 
-    background:#ffd700;
-    color:#000;
-    text-align:center;
+background:#FFD700;
+padding:80px 20px;
+text-align:center;
+color:#000;
 
 }
-
 
 .contact h2{
 
-    font-size:40px;
+font-size:48px;
+margin-bottom:20px;
 
 }
 
+.contact p{
 
-.contact a{
-
-    color:#000;
-    font-size:25px;
-    font-weight:bold;
+font-size:22px;
+margin-bottom:30px;
 
 }
 
+.contact .phone{
 
-/* FOOTER */
+display:inline-block;
+margin:10px;
+padding:18px 30px;
+background:#08101f;
+color:white;
+border-radius:12px;
+font-size:22px;
+font-weight:700;
 
+}
 
 footer{
 
-    background:#050812;
-    text-align:center;
-    padding:30px;
-    color:#aaa;
+background:#050812;
+padding:40px;
+text-align:center;
+color:#bbb;
 
 }
 
+.whatsapp-float{
 
-.info{
-
-    margin-top:25px;
-    line-height:1.8;
+position:fixed;
+bottom:25px;
+right:25px;
+width:70px;
+height:70px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:34px;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+z-index:999;
 
 }
 
+@media(max-width:950px){
 
-/* MOBILE */
+.hero-grid{
 
+grid-template-columns:1fr;
 
-@media(max-width:700px){
+}
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
 
 .hero h1{
 
@@ -294,10 +589,15 @@ font-size:18px;
 
 }
 
+.buttons{
+
+flex-direction:column;
+
+}
+
 .btn{
 
-display:block;
-margin:15px 0;
+text-align:center;
 
 }
 
@@ -305,295 +605,122 @@ margin:15px 0;
 
 </style>
 
-
 </head>
 
-
 <body>
-
-
 
 <header>
 
 <div class="container">
 
+<nav>
+
 <div class="logo">
-
-<!-- METTRE VOTRE LOGO ICI -->
-<img src="logo.png" alt="Ordiphone Service 9">
-
+Ordiphone <span>Service 9</span>
 </div>
+
+<ul>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#photos">Réparations</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<a class="cta" href="tel:0983365858">
+📞 Appeler
+</a>
+
+</nav>
 
 </div>
 
 </header>
 
-
-
 <section class="hero">
 
 <div class="container">
 
-<div class="hero-content">
+<div class="hero-grid">
 
+<div>
 
 <h1>
-Ordiphone Service 9
-<br>
-<span>Réparation & Dépannage</span>
-<br>
-Paris 9
+
+Réparation
+<span>informatique</span>
+
+à Paris 9
+
 </h1>
 
-
 <p>
-PC • Smartphones • Imprimantes • Informatique
-<br>
-Diagnostic rapide et solutions professionnelles.
+
+Réparation de PC, Mac, smartphones, imprimantes, maintenance informatique, récupération de données et vente de matériel reconditionné.
+
 </p>
 
+<div class="buttons">
 
-<a class="btn call" href="tel:0983365858">
-📞 Appeler maintenant
+<a class="btn yellow" href="tel:0983365858">
+
+📞 Appeler
+
 </a>
 
+<a class="btn green" href="https://wa.me/33616105246">
 
-<a class="btn whatsapp" href="https://wa.me/33616105246">
 💬 WhatsApp
+
 </a>
 
-
-<div class="info">
-
-📍 80 rue Amsterdam, 75009 Paris
-<br>
-
-🚇 Métro Place de Clichy ou Liège
-<br>
-
-🕘 Lundi - Samedi : 10h30 - 19h00
-
-</div>
-
-
 </div>
 
 </div>
 
-</section>
+<div class="hero-card">
 
+<h3>Informations</h3>
 
+<p><i class="fa-solid fa-location-dot"></i> 80 Rue d'Amsterdam - 75009 Paris</p>
 
+<p><i class="fa-solid fa-clock"></i> Lundi - Samedi : 10h30 - 19h00</p>
 
-<section>
+<p><i class="fa-solid fa-phone"></i> 09 83 36 58 58</p>
 
-<div class="container">
-
-
-<h2 class="title">
-Nos <span>services</span>
-</h2>
-
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>💻 Réparation PC</h3>
-
-<p>
-PC portable, PC fixe, Mac.
-Nettoyage, optimisation, virus,
-SSD, RAM, clavier, batterie.
-</p>
+<p><i class="fa-solid fa-mobile-screen"></i> 06 16 10 52 46</p>
 
 </div>
 
-
-<div class="card">
-
-<h3>📱 Smartphones</h3>
-
-<p>
-Réparation téléphone,
-écran, batterie, connecteur,
-diagnostic panne.
-</p>
-
 </div>
 
+<div class="stats">
 
-<div class="card">
-
-<h3>🖨️ Imprimantes</h3>
-
-<p>
-Installation, configuration,
-connexion Wi-Fi et dépannage.
-</p>
-
+<div class="stat">
+<h2>10+</h2>
+<p>Années d'expérience</p>
 </div>
 
-
-<div class="card">
-
-<h3>⚙️ Maintenance</h3>
-
-<p>
-Installation Windows,
-logiciels, sauvegarde,
-récupération de données.
-</p>
-
+<div class="stat">
+<h2>5000+</h2>
+<p>Réparations</p>
 </div>
 
-
+<div class="stat">
+<h2>98%</h2>
+<p>Clients satisfaits</p>
 </div>
 
+<div class="stat">
+<h2>24h</h2>
+<p>Diagnostic rapide</p>
+</div>
+
+</div>
 
 </div>
 
 </section>
-
-
-
-
-<section>
-
-
-<div class="container">
-
-
-<h2 class="title">
-Pourquoi <span>nous choisir ?</span>
-</h2>
-
-
-<div class="features">
-
-
-<div class="feature">
-⚡
-<br>
-Intervention rapide
-</div>
-
-
-<div class="feature">
-⭐
-<br>
-Professionnels expérimentés
-</div>
-
-
-<div class="feature">
-💰
-<br>
-Devis avant réparation
-</div>
-
-
-<div class="feature">
-🏢
-<br>
-Particuliers & professionnels
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<section>
-
-
-<div class="container">
-
-
-<h2 class="title">
-Nos <span>marques</span>
-</h2>
-
-
-<div class="brands">
-
-HP • Dell • Lenovo • Apple • Asus • Acer
-<br>
-Samsung • Canon • Epson • Brother • Huawei
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="contact">
-
-
-<h2>
-Besoin d'une réparation ?
-</h2>
-
-<br>
-
-
-<p>
-Appelez Ordiphone Service 9
-</p>
-
-
-<br>
-
-
-<a href="tel:0616105246">
-06 16 10 52 46
-</a>
-
-
-<br><br>
-
-
-<a href="tel:0983365858">
-09 83 36 58 58
-</a>
-
-
-</section>
-
-
-
-
-<footer>
-
-Ordiphone Service 9
-<br>
-
-80 rue Amsterdam - 75009 Paris
-
-<br><br>
-
-© 2026 Tous droits réservés
-
-</footer>
-
-
-
-
-</body>
-
-</html>
+```
