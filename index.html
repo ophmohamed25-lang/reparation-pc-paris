@@ -10,6 +10,7 @@
             --primary-hover: #e6c200;
             --bg-dark: #0a1120;
             --bg-card: #13223f;
+            --bg-card-light: #182c50;
             --text-light: #ffffff;
             --text-muted: #94a3b8;
             --whatsapp: #25D366;
@@ -135,6 +136,10 @@
             padding: 80px 20px;
         }
 
+        .pb-0 {
+            padding-bottom: 0;
+        }
+
         /* TITRES SECTIONS */
         section h2 {
             font-size: 2rem;
@@ -156,7 +161,7 @@
         /* GRIDS & CARTES */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
@@ -186,6 +191,62 @@
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
+        }
+
+        /* SECTION DISCRÈTE : DÉSTOCKAGE */
+        .destockage-banner {
+            background: linear-gradient(135deg, #0d1b35 0%, #15294a 100%);
+            border: 1px dashed rgba(255, 215, 0, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .destockage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .destockage-title {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .destockage-badge {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .destockage-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .destockage-list li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .destockage-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
         }
 
         /* GALERIE (3 colonnes) */
@@ -259,6 +320,12 @@
         }
 
         /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .destockage-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -274,6 +341,9 @@
                 padding: 60px 20px;
             }
             .gallery-3col {
+                grid-template-columns: 1fr;
+            }
+            .destockage-list {
                 grid-template-columns: 1fr;
             }
         }
@@ -305,35 +375,60 @@
 
     <!-- Section Services -->
     <section id="services">
-        <div class="container">
+        <div class="container pb-0">
             <h2>Nos Services</h2>
             <div class="grid">
+                <!-- Service 1 : Réparation PC & Hardware -->
                 <div class="card">
-                    <h3>💻 Réparation PC</h3>
-                    <p>Optimisation SSD, ajout de RAM, installation Windows, nettoyage de virus et remplacement de batterie.</p>
+                    <h3>💻 Réparation Matérielle PC</h3>
+                    <p>Dépannage complet de vos ordinateurs de bureau et portables : remplacement d'écran brisé, changement de batterie HS, réparation de connecteurs de charge défectueux, changement de claviers et de composants internes.</p>
                 </div>
+                <!-- Service 2 : Récupération de Données -->
+                <div class="card">
+                    <h3>💾 Récupération de Données</h3>
+                    <p>Extraction et récupération sécurisée de vos fichiers perdus ou inaccessibles sur disques durs (HDD/SSD) endommagés, clés USB défaillantes, cartes mémoire et transfert complet de vos données vers votre nouvel appareil.</p>
+                </div>
+                <!-- Service 3 : Smartphones -->
                 <div class="card">
                     <h3>📱 Smartphones</h3>
-                    <p>Remplacement d'écran brisé, changement de batterie et réparation du connecteur de charge.</p>
+                    <p>Remplacement rapide d'écrans tactiles fissurés, changement de batteries usées, résolution de bugs et réparation du connecteur de charge pour toutes marques.</p>
                 </div>
+                <!-- Service 4 : Imprimantes & Réseau -->
                 <div class="card">
                     <h3>🖨️ Imprimantes</h3>
-                    <p>Installation réseau, configuration Wi-Fi et dépannage technique de vos équipements d'impression.</p>
+                    <p>Installation, configuration Wi-Fi/réseau, résolution de pannes mécaniques et de bourrages, et paramétrage d'outils d'impression pour particuliers et pros.</p>
                 </div>
-                <div class="card">
-                    <h3>⚙️ Maintenance</h3>
-                    <p>Sauvegarde préventive de vos données, nettoyage système complet et récupération de fichiers perdus.</p>
+            </div>
+
+            <!-- EN PARALLÈLE : Déstockage Informatique (Discret et pro) -->
+            <div class="destockage-banner">
+                <div class="destockage-header">
+                    <div class="destockage-title">🔌 Déstockage Informatique</div>
+                    <div class="destockage-badge">Matériel neuf & reconditionné</div>
                 </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                    Nous proposons également un large choix d'équipements informatiques en déstockage à des prix très compétitifs, pour les professionnels et les particuliers.
+                </p>
+                <ul class="destockage-list">
+                    <li>PC Portables</li>
+                    <li>Unités Centrales (UC)</li>
+                    <li>Téléphones & Smartphones</li>
+                    <li>Écrans d'ordinateurs</li>
+                    <li>Tablettes tactiles</li>
+                    <li>Imprimantes</li>
+                    <li>Accessoires informatiques</li>
+                    <li>Garantie incluse</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Section Galerie (Modifiée à 3 photos publiques, stables et fonctionnelles) -->
+    <!-- Section Galerie (3 photos stables et fonctionnelles) -->
     <section>
         <div class="container">
             <h2>Nos réalisations</h2>
             <div class="gallery-3col">
-                <!-- Photo 1 : Réparation Ordinateur / Électronique -->
+                <!-- Photo 1 : Réparation PC -->
                 <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea" alt="Réparation PC">
                 <!-- Photo 2 : Écran de Smartphone -->
                 <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Réparation Mobile">
