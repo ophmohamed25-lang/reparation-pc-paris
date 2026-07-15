@@ -1,34 +1,437 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ordiphone Service 9</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#08101f;color:#fff}
-header{position:fixed;top:0;width:100%;background:#091425;padding:15px 0}nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}
-nav a{color:#fff;text-decoration:none;margin-left:20px}.btn{background:#ffd700;color:#000;padding:12px 20px;border-radius:8px}
-.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80') center/cover}
-.container{max-width:1200px;margin:auto;padding:100px 20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:#13203a;padding:20px;border-radius:12px}.gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px}
-section{padding:70px 20px}iframe{width:100%;height:420px;border:0;border-radius:12px}
-footer{text-align:center;padding:30px;background:#050812}
-.float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:16px 18px;border-radius:50%;text-decoration:none;font-size:26px}
-</style></head><body>
-<header><nav><h2 style="color:#ffd700">Ordiphone Service 9</h2><div><a href="#services">Services</a><a href="#contact" class="btn">Appeler</a></div></nav></header>
-<div class="hero"><div class="container"><h1>Réparation PC, Smartphones & Imprimantes</h1><p>80 rue d'Amsterdam - 75009 Paris</p><a class="btn" href="tel:0983365858">09 83 36 58 58</a></div></div>
-<section id="services"><div class="container"><h2>Nos services</h2><div class="grid">
-<div class="card"><h3>💻 Réparation PC</h3><p>SSD, RAM, Windows, virus, batterie.</p></div>
-<div class="card"><h3>📱 Smartphones</h3><p>Écran, batterie, connecteur.</p></div>
-<div class="card"><h3>🖨️ Imprimantes</h3><p>Installation et dépannage.</p></div>
-<div class="card"><h3>⚙️ Maintenance</h3><p>Sauvegarde, récupération de données.</p></div>
-</div></div></section>
-<section><div class="container"><h2>Nos réparations</h2><div class="grid gallery">
-<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=80">
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=900&q=80">
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80">
-<img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=900&q=80">
-</div></div></section>
-<section id="contact"><div class="container"><h2>Nous trouver</h2>
-<iframe src="https://www.google.com/maps?q=80+rue+d%27Amsterdam+75009+Paris&output=embed" loading="lazy"></iframe>
-</div></section>
-<footer>Ordiphone Service 9 • 80 rue d'Amsterdam • Paris 9</footer>
-<a class="float" href="https://wa.me/33616105246">💬</a>
-</body></html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordiphone Service 9 - Réparation PC, Smartphones & Imprimantes Paris 9</title>
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --bg-main: #0b132b;
+            --bg-card: #1c2541;
+            --bg-header: rgba(11, 19, 43, 0.85);
+            --primary: #ffd700;
+            --primary-hover: #ffea70;
+            --text-light: #ffffff;
+            --text-muted: #a5b4fc;
+            --whatsapp-green: #25D366;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- EN-TÊTE (NAVBAR) --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--bg-header);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- BOUTONS --- */
+        .btn {
+            background: var(--primary);
+            color: #000;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.25);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* --- SECTION HERO --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(rgba(11, 19, 43, 0.75), rgba(11, 19, 43, 0.9)), 
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .hero .btn {
+            font-size: 1.1rem;
+            padding: 14px 32px;
+        }
+
+        /* --- SECTIONS (SERVICES & CONTACT) --- */
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- GRILLE DE SERVICES --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 35px 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- GALERIE PHOTO --- */
+        .gallery {
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            height: 250px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* --- MAP & CONTACT --- */
+        .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            display: block;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #050811;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- BOUTON FLOTTANT WHATSAPP --- */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.1);
+            background-color: #20ba5a;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .float-wa svg {
+            width: 32px;
+            height: 32px;
+            fill: #ffffff;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px 15px;
+            }
+            .nav-links {
+                gap: 12px;
+            }
+            .nav-links a {
+                display: none; /* Cache le lien texte "Services" inutile sur petit écran */
+            }
+            section {
+                padding: 60px 15px;
+            }
+            .float-wa {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .float-wa svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#" class="logo">Ordiphone Service 9</a>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="tel:0983365858" class="btn">
+                <span>📞 Appeler</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Section Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Réparation PC, Smartphones & Imprimantes</h1>
+            <p>80 rue d'Amsterdam, 75009 Paris • Service rapide et de qualité</p>
+            <a class="btn" href="tel:0983365858">09 83 36 58 58</a>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Réparation PC</h3>
+                    <p>Installation de SSD, remplacement de RAM, dépannage Windows, éradication de virus et changement de batterie.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Smartphones</h3>
+                    <p>Remplacement d'écrans cassés, changement de batterie et réparation des connecteurs de charge.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🖨️</div>
+                    <h3>Imprimantes</h3>
+                    <p>Installation complète, configuration réseau Wi-Fi et résolution de tous vos problèmes de dépannage.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Maintenance</h3>
+                    <p>Sauvegarde automatique et récupération complète de données perdues sur disques endommagés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Galerie -->
+    <section>
+        <div class="container">
+            <h2>Notre Atelier</h2>
+            <div class="grid gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=80" alt="Réparation ordinateur portable">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=900&q=80" alt="Soudure et composants électroniques">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Écrans d'ordinateurs et outils">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=900&q=80" alt="Dépannage de smartphone">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact / Map -->
+    <section id="contact">
+        <div class="container">
+            <h2>Nous Trouver</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=80+rue+d%27Amsterdam+75009+Paris&output=embed" loading="lazy" title="Carte situation Ordiphone Service 9"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Ordiphone Service 9 • 80 rue d'Amsterdam, Paris 9 • Tous droits réservés.</p>
+</footer>
+
+<!-- Bouton WhatsApp Flottant Moderne -->
+<a class="float-wa" href="https://wa.me/33616105246" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp">
+    <svg viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.488 2.01 14.039 1.01 11.993 1.01c-5.452 0-9.88 4.425-9.884 9.855-.001 1.768.48 3.49 1.39 5.031l-.993 3.624 3.733-.966c1.517.822 3.102 1.254 4.812 1.254zm11.233-7.447c-.31-.155-1.837-.893-2.12-.995-.283-.103-.488-.155-.691.155-.203.311-.788.995-.966 1.199-.177.204-.355.23-.665.075-.309-.155-1.306-.475-2.487-1.514-.92-.81-1.54-1.81-1.72-2.119-.18-.31-.018-.478.136-.632.14-.139.31-.355.466-.533.155-.178.207-.309.31-.518.103-.207.051-.389-.026-.543-.078-.155-.691-1.643-.948-2.257-.25-.595-.503-.518-.691-.527-.178-.008-.383-.01-.587-.01-.205 0-.537.076-.818.38-.282.311-1.077 1.039-1.077 2.535 0 1.497 1.094 2.943 1.248 3.148.155.204 2.152 3.239 5.215 4.536.728.309 1.297.494 1.74.633.731.23 1.396.197 1.922.12.586-.087 1.837-.739 2.095-1.42.257-.682.257-1.267.18-1.391-.077-.124-.282-.197-.591-.355z"/>
+    </svg>
+</a>
+
+</body>
+</html>
